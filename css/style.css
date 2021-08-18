@@ -79,7 +79,7 @@
 /* Loader 2 */
 
 .load2 .dot {
-  animation: load2 var(--animation-duration) ease-in-out infinite;
+  animation: load2 var(--animation-duration) linear infinite;
 }
 
 .load2 .dot:nth-child(1) {
@@ -103,7 +103,7 @@
     transform: scale(1.5);
   }
   50% {
-    transform: scale(1);
+    transform: scale(0.8);
   }
 }
 
