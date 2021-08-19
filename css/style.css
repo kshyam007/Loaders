@@ -21,7 +21,6 @@
 }
 
 .box {
-  /* background-color: rgba(255, 255, 255, 0.8); */
   border: 1px solid rgba(0, 0, 0, 0.8);
   width: 10%;
   min-width: 150px;
@@ -908,17 +907,23 @@
 /* Loader 22 */
 
 .load22 div,
-.load23 div {
+.load23 div,
+.load24 div {
   width: 5px;
   height: 40px;
   margin: 0 3px;
   transform: scaleY(0.5);
   background-color: var(--clr-white);
+}
+
+.load22 div,
+.load23 div {
   animation: load22 var(--animation-duration) ease-in-out infinite;
   animation-delay: calc(var(--animation-duration) / 10 * var(--n));
 }
 
 .load22 div:nth-child(odd),
+.load24 div:nth-child(odd),
 .load23 div:nth-child(even) {
   background-color: var(--clr-blue);
 }
@@ -954,6 +959,7 @@
 
 /* Loader 23 */
 
+/* some css of loader 23's are in loader22 */
 .load23 .line-1,
 .load23 .line-3,
 .load23 .line-5 {
@@ -963,32 +969,61 @@
 .load23 .line-4 {
   --n: 2;
 }
+
 /* /Loader 23 */
 
 /* Loader 24 */
 
-.load24 .circle {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  border: 2px solid var(--clr-blue);
-  position: relative;
+.load24 div {
+  transform: scale(0.2);
+  animation: load24 var(--animation-duration) ease infinite;
+  animation-delay: calc(var(--animation-duration) / 16 * var(--n));
 }
 
-.load24 .circle::before {
-  content: "";
-  width: 2px;
-  height: 18px;
-  top: 5px;
-  background-color: var(--clr-white);
-  position: absolute;
-  transform-origin: 50% 100%;
-  animation: load24 var(--animation-duration-2) linear infinite;
+.load24 .line-1 {
+  --n: 1;
+}
+.load24 .line-2 {
+  --n: 2;
+}
+.load24 .line-3 {
+  --n: 3;
+}
+.load24 .line-4 {
+  --n: 4;
+}
+.load24 .line-5 {
+  --n: 5;
+}
+.load24 .line-6 {
+  --n: 6;
+}
+.load24 .line-7 {
+  --n: 7;
+}
+.load24 .line-8 {
+  --n: 8;
+}
+.load24 .line-9 {
+  --n: 9;
+}
+.load24 .line-10 {
+  --n: 10;
 }
 
 @keyframes load24 {
+  0%,
   100% {
-    transform: translate(0) rotate(360deg);
+    transform: scaleY(0);
+  }
+  25% {
+    transform: scaleY(0.8);
+  }
+  50% {
+    transform: scaleY(0);
+  }
+  75% {
+    transform: scaleY(0.8);
   }
 }
 
@@ -996,48 +1031,238 @@
 
 /* Loader 25 */
 
-.load25 {
+.load25 div {
+  width: 5px;
+  height: 40px;
+  margin: 0 2px;
+  transform: scaleY(calc(var(--n) * 20%));
+  transform-origin: bottom;
+  background-color: var(--clr-white);
+  animation: load25 var(--animation-duration) ease infinite;
+  animation-delay: calc(var(--animation-duration) / 10 * var(--n));
+}
+
+.load25 .line-1,
+.load25 .line-5 {
+  --n: 1;
+  background-color: var(--clr-blue);
+}
+.load25 .line-2,
+.load25 .line-4 {
+  --n: 2;
+}
+.load25 .line-3 {
+  --n: 3;
+  background-color: var(--clr-blue);
+}
+
+@keyframes load25 {
+  0%,
+  100% {
+    transform: scaleY(0);
+  }
+  50% {
+    transform: scaleY(1);
+  }
+}
+
+/* /Loader 25 */
+
+/* Loader 26 */
+
+.load26 {
   position: relative;
 }
-.load25 .circle1 {
+
+.load26 div {
+  border-radius: 50%;
+  border: 2px solid transparent;
+  position: absolute;
+  animation: load26 var(--animation-duration) ease infinite;
+  animation-delay: calc(var(--animation-duration) / 10 * var(--n));
+}
+
+.load26 .circle-1 {
+  --n: 1;
+  width: 60px;
+  height: 60px;
+  border-top-color: var(--clr-blue);
+}
+.load26 .circle-2 {
+  --n: 2;
+  width: 48px;
+  height: 48px;
+  border-top-color: var(--clr-white);
+}
+.load26 .circle-3 {
+  --n: 3;
+  width: 36px;
+  height: 36px;
+  border-top-color: var(--clr-blue);
+}
+.load26 .circle-4 {
+  --n: 4;
+  width: 24px;
+  height: 24px;
+  border-top-color: var(--clr-white);
+}
+.load26 .circle-5 {
+  --n: 5;
+  width: 12px;
+  height: 12px;
+  border-top-color: var(--clr-blue);
+}
+
+@keyframes load26 {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* /Loader 26 */
+
+/* Loader 27 */
+
+.load27 .circle {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  position: relative;
+  border: 2px solid var(--clr-blue);
+  animation: load27 var(--animation-duration-2) linear infinite;
+}
+.load27 .circle::after {
+  content: "";
+  position: absolute;
+  left: 4px;
+  top: 4px;
+  border: 2px solid var(--clr-white);
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+@keyframes load27 {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* /Loader 27 */
+
+/* Loader 28 */
+
+.load28 .circle {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  position: relative;
+  border: 2px solid var(--clr-blue);
+  animation: load27 var(--animation-duration-2) linear infinite;
+}
+
+.load28 .circle::after,
+.load28 .circle::before {
+  content: "";
+  position: absolute;
+  border: 2px solid var(--clr-white);
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.load28 .circle::after {
+  left: 5px;
+  top: 5px;
+}
+
+.load28 .circle::before {
+  right: 5px;
+  bottom: 5px;
+}
+
+@keyframes load28 {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* /Loader 27 */
+
+/* Loader 29 */
+
+.load29 .circle {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 2px solid var(--clr-blue);
+  position: relative;
+}
+
+.load29 .circle::before {
+  content: "";
+  width: 2px;
+  height: 18px;
+  top: 5px;
+  background-color: var(--clr-white);
+  position: absolute;
+  transform-origin: 50% 100%;
+  animation: load29 var(--animation-duration-2) linear infinite;
+}
+
+@keyframes load29 {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* /Loader 29 */
+
+/* Loader 30 */
+
+.load30 {
+  position: relative;
+}
+.load30 .circle-1 {
   width: 50px;
   height: 50px;
   border-radius: 50%;
   border: 2px solid var(--clr-blue);
   border-top-color: transparent;
   position: absolute;
-  animation: load25A var(--animation-duration) ease infinite;
+  animation: load30A var(--animation-duration) ease infinite;
 }
 
-.load25 .circle2 {
+.load30 .circle-2 {
   width: 35px;
   height: 35px;
   border-radius: 50%;
   border: 2px solid var(--clr-white);
   border-bottom-color: transparent;
   position: absolute;
-  animation: load25B var(--animation-duration) ease infinite;
+  animation: load30B var(--animation-duration) ease infinite;
 }
 
-.load25 .circle3 {
+.load30 .circle-3 {
   width: 20px;
   height: 20px;
   border-radius: 50%;
   border: 2px solid var(--clr-blue);
   border-top-color: transparent;
   position: absolute;
-  animation: load25A var(--animation-duration) ease infinite;
+  animation: load30A var(--animation-duration) ease infinite;
 }
 
-@keyframes load25A {
+@keyframes load30A {
   100% {
     transform: rotate(360deg);
   }
 }
 
-@keyframes load25B {
+@keyframes load30B {
   100% {
     transform: rotate(-360deg);
   }
 }
-/* /Loader 25 */
+
+/* /Loader 30 */
